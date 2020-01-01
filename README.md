@@ -1,4 +1,5 @@
-# ***ZazuML***
+![Logo](./images/ZazuML.jpeg)
+<br/><br/>   
 
 This is an open-source AutoML project. Currently this project contains a model finder, hyper-parameter tuner, 
 and trial manager all wrapped up in one synchronous end to end program. The input to this program is a dataset and your
@@ -16,14 +17,15 @@ free you up from the boring stuff.
 ## Under the hood
 *ZazuML* is built up from 4 main packages, 
 
-1. The *Model Selector* who's job is to select the optimal model based on the 
+1. The *Model Selector* is in charge of selecting the optimal model based on the 
 priorities of the user.
 
-2. The *Tuner* who manages and keeps track of trials
+2. The *Tuner* searches for hyper-parameters, manages and keeps track of trials
 
-3. The *Launchpad* who is in charge of launches and distribution of gpu resources amongst trials
+3. The *Launchpad* is in charge launching local or remote trials and distribution of gpu resources amongst trials
 
-4. And last but not least, the [ZaZoo](https://github.com/dataloop-ai/zazoo) 
+4. The [Zazu Model Zoo](https://github.com/dataloop-ai/zoo), was once known as
+ the *ZaZOO* (my little joke), but to avoid confusion we renamed to just plane old *ZOO*.
 
 ![model_space](./images/tetra4.jpeg)
 
@@ -47,9 +49,9 @@ Be sure to update the nvidia-devices flag!
 ```
 git clone https://github.com/dataloop-ai/ZazuML.git
 cd ZazuML
-git clone https://github.com/dataloop-ai/zazoo.git
+git clone https://github.com/dataloop-ai/zoo.git
 ```
-<br/><br/>   
+
 The next thing to do is edit the configs.json file
 
 ### *configs.json example*
@@ -106,6 +108,15 @@ python zazutuner.py --predict
 ```
 python zazutuner.py --search --remote
 ```
+
+## TO DO
+
+- Finish remote cloud deployment feature
+- Stabilize version, improve search space and readability
+- Implement BOHB instead of random search
+- Make search space dependent on computational budget
+- NAS to replace some of the HP search
+- Intelligent Losses to replace some of the HP search
 
 ## Contact
 
